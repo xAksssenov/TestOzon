@@ -16,17 +16,23 @@
     <section class="progress">
       <h4 class="progress__title">Progress</h4>
 
-      <div class="container">
-        <svg class="container__ring" id="ringBlock" viewBox="0 0 140 140">
+      <div class="progress__container">
+        <svg
+          class="progress__container-ring"
+          id="ringBlock"
+          viewBox="0 0 140 140"
+        >
           <circle
-            class="container__ring--background"
+            class="progress__container-ring-background"
+            id="ringBackground"
             cx="70"
             cy="70"
             r="60"
             stroke-width="10"
           />
           <circle
-            class="container__ring--progress"
+            class="progress__container-ring-main"
+            id="ringMain"
             cx="70"
             cy="70"
             r="60"
@@ -35,24 +41,24 @@
           />
         </svg>
 
-        <section class="inputs">
-          <label class="inputs__label" for="valueInput">
+        <section class="progress__inputs">
+          <label class="progress__inputs-label" for="valueInput">
             <input
-              class="inputs__label--item"
+              class="progress__inputs-label-item"
               type="number"
               id="valueInput"
               value="0"
             />
             Value
           </label>
-          <label class="inputs__switch" for="animateToggle">
+          <label class="progress__inputs-switch" for="animateToggle">
             <input type="checkbox" id="animateToggle" />
-            <span class="inputs__switch--slider"></span>
+            <span class="progress__inputs-switch-slider"></span>
             Animate
           </label>
-          <label class="inputs__switch" for="hideToggle">
+          <label class="progress__inputs-switch" for="hideToggle">
             <input type="checkbox" id="hideToggle" />
-            <span class="inputs__switch--slider"></span>
+            <span class="progress__inputs-switch-slider"></span>
             Hide
           </label>
         </section>

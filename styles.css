@@ -1,6 +1,6 @@
 .progress {
   padding: 15px;
-  font-family: "Poppins" sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
@@ -10,7 +10,7 @@
   margin: 0;
 }
 
-.container {
+.progress__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,13 +19,13 @@
   margin-top: 90px;
 }
 
-.container__ring {
-  width: 120px;
-  height: 120px;
+.progress__container-ring {
+  width: 140px;
+  height: 140px;
   position: relative;
 }
 
-.container__ring circle {
+.progress__container-ring circle {
   fill: none;
   stroke-width: 10;
   stroke-linecap: round;
@@ -33,48 +33,54 @@
   transform-origin: 50% 50%;
 }
 
-.container__ring--background {
+.progress__container-ring-background {
   stroke: rgb(224, 230, 239);
 }
 
-.container__ring--progress {
+.progress__container-ring-main {
   stroke: rgb(0, 91, 255);
   transition: stroke-dasharray 0.3s;
 }
 
-.inputs {
+.progress__inputs {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.inputs__label {
+.progress__inputs-label {
   display: flex;
   align-items: center;
   gap: 25px;
   cursor: pointer;
 }
 
-.inputs__label--item {
+.progress__inputs-label-item {
   box-sizing: border-box;
+  text-align: center;
   width: 45px;
   height: 28px;
   border: 1px solid black;
   border-radius: 20px;
+  outline: none;
 }
 
-.inputs__switch {
+.progress__inputs-label-item:focus {
+  border: 1px solid rgb(0, 91, 255);
+}
+
+.progress__inputs-switch {
   display: flex;
   align-items: center;
   gap: 25px;
   cursor: pointer;
 }
 
-.inputs__switch input {
+.progress__inputs-switch input {
   display: none;
 }
 
-.inputs__switch--slider {
+.progress__inputs-switch-slider {
   position: relative;
   width: 45px;
   height: 28px;
@@ -83,7 +89,7 @@
   transition: 0.3s;
 }
 
-.inputs__switch--slider::before {
+.progress__inputs-switch-slider::before {
   content: "";
   position: absolute;
   width: 24px;
@@ -95,14 +101,22 @@
   transition: 0.3s;
 }
 
-.inputs__switch input:checked + .inputs__switch--slider {
+.progress__inputs-switch input:checked + .progress__inputs-switch-slider {
   background: rgb(0, 91, 255);
 }
 
-.inputs__switch input:checked + .inputs__switch--slider::before {
+.progress__inputs-switch
+  input:checked
+  + .progress__inputs-switch-slider::before {
   transform: translateX(17px);
 }
 
-.hidden {
+.progress__hidden {
   display: none;
+}
+
+@media (min-width: 420px) {
+  .progress__container {
+    flex-direction: row;
+  }
 }
