@@ -1,28 +1,31 @@
-.container {
+.progress {
   padding: 15px;
-  font-family: Goldman, sans-serif;
+  font-family: "Poppins" sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
-.container__title {
+.progress__title {
   font-weight: 500;
   margin: 0;
 }
 
-.container__section {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 90px;
+  margin-top: 90px;
 }
 
-.section__ring {
-  width: 150px;
-  height: 150px;
+.container__ring {
+  width: 120px;
+  height: 120px;
   position: relative;
 }
 
-.section__ring circle {
+.container__ring circle {
   fill: none;
   stroke-width: 10;
   stroke-linecap: round;
@@ -30,13 +33,74 @@
   transform-origin: 50% 50%;
 }
 
-.section__ring--background {
-  stroke: #ddd;
+.container__ring--background {
+  stroke: rgb(224, 230, 239);
 }
 
-.section__ring--progress {
-  stroke: blue;
+.container__ring--progress {
+  stroke: rgb(0, 91, 255);
   transition: stroke-dasharray 0.3s;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputs__label {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  cursor: pointer;
+}
+
+.inputs__label--item {
+  box-sizing: border-box;
+  width: 45px;
+  height: 28px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.inputs__switch {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  cursor: pointer;
+}
+
+.inputs__switch input {
+  display: none;
+}
+
+.inputs__switch--slider {
+  position: relative;
+  width: 45px;
+  height: 28px;
+  background: rgb(224, 230, 239);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.inputs__switch--slider::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+.inputs__switch input:checked + .inputs__switch--slider {
+  background: rgb(0, 91, 255);
+}
+
+.inputs__switch input:checked + .inputs__switch--slider::before {
+  transform: translateX(17px);
 }
 
 .hidden {
