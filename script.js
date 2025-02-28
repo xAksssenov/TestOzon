@@ -29,27 +29,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   animateToggle.addEventListener("change", (e) => {
-    // let animationInterval;
-    // let currentValue = 0;
-    // valueInput.value = 0;
-    // if (e.target.checked) {
-    //   updateProgress(0);
-    //   valueInput.disabled = true;
-    //   animationInterval = setInterval(() => {
-    //     currentValue += 1;
-    //     updateProgress(currentValue);
-    //     if (currentValue >= 100) {
-    //       clearInterval(animationInterval);
-    //     }
-    //   }, 10);
-    // } else {
-    //   clearInterval(animationInterval);
-    //   updateProgress(0);
-    //   valueInput.disabled = false;
-    // }
+    if (e.target.checked) {
+      ringProgress.classList.add("progress__animated");
+      valueInput.value = 0;
+      valueInput.disabled = true;
+    } else {
+      ringProgress.classList.remove("progress__animated");
+      updateProgress(0);
+      valueInput.disabled = false;
+    }
   });
 
   hideToggle.addEventListener("change", (e) => {
     ringBlock.classList.toggle("progress__hidden", e.target.checked);
+    valueInput.value = 0;
+    updateProgress(0);
+    e.target.checked
+      ? (valueInput.disabled = true)
+      : (valueInput.disabled = false);
   });
 });

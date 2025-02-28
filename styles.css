@@ -25,6 +25,10 @@
   position: relative;
 }
 
+.progress__hidden {
+  display: none;
+}
+
 .progress__container-ring circle {
   fill: none;
   stroke-width: 10;
@@ -50,21 +54,18 @@
 
 .progress__error {
   position: absolute;
+  top: -60px;
   text-align: center;
   color: rgb(192, 1, 1);
   opacity: 0;
   visibility: hidden;
-  transition:
-    opacity 0.3s,
-    visibility 0.3s;
+  transition: all 0.3s ease;
 }
 
 .progress__visible {
   opacity: 1;
   visibility: visible;
-  transition:
-    opacity 0.3s ease,
-    visibility 0s;
+  transition: all 0.3s ease;
 }
 
 .progress__inputs-label {
@@ -125,16 +126,27 @@
   background: rgb(0, 91, 255);
 }
 
-.progress__inputs-switch input:checked + .progress__inputs-switch-slider::before {
+.progress__inputs-switch
+  input:checked
+  + .progress__inputs-switch-slider::before {
   transform: translateX(17px);
-}
-
-.progress__hidden {
-  display: none;
 }
 
 @media (min-width: 420px) {
   .progress__container {
     flex-direction: row;
   }
+}
+
+@keyframes progressAnimation {
+  from {
+    stroke-dasharray: 0 377;
+  }
+  to {
+    stroke-dasharray: 377 377;
+  }
+}
+
+.progress__animated {
+  animation: progressAnimation 2s ease infinite;
 }
