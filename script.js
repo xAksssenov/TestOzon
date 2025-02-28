@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   valueInput.addEventListener("input", (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, "");
     let value = Number(e.target.value);
 
     if (checkValue(value)) {
