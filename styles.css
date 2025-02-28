@@ -140,13 +140,13 @@
 
 @keyframes progressAnimation {
   from {
-    stroke-dasharray: 0 377;
+    transform: rotate(-90deg);
   }
   to {
-    stroke-dasharray: 377 377;
+    transform: rotate(270deg);
   }
 }
 
 .progress__animated {
-  animation: progressAnimation 2s ease infinite;
+  animation: progressAnimation 1.5s linear infinite;
 }

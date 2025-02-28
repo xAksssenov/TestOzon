@@ -30,21 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   animateToggle.addEventListener("change", (e) => {
-    if (e.target.checked) {
-      ringProgress.classList.add("progress__animated");
-      valueInput.value = 0;
-      valueInput.disabled = true;
-    } else {
-      ringProgress.classList.remove("progress__animated");
-      updateProgress(0);
-      valueInput.disabled = false;
-    }
+    e.target.checked
+      ? ringProgress.classList.add("progress__animated")
+      : ringProgress.classList.remove("progress__animated");
   });
 
   hideToggle.addEventListener("change", (e) => {
     ringBlock.classList.toggle("progress__hidden", e.target.checked);
+    ringProgress.classList.remove("progress__animated");
+    animateToggle.checked = false;
     valueInput.value = 0;
     updateProgress(0);
+
     e.target.checked
       ? (valueInput.disabled = true)
       : (valueInput.disabled = false);
