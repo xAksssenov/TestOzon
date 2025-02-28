@@ -1,0 +1,44 @@
+.container {
+  padding: 15px;
+  font-family: Goldman, sans-serif;
+}
+
+.container__title {
+  font-weight: 500;
+  margin: 0;
+}
+
+.container__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.section__ring {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.section__ring circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.section__ring--background {
+  stroke: #ddd;
+}
+
+.section__ring--progress {
+  stroke: blue;
+  transition: stroke-dasharray 0.3s;
+}
+
+.hidden {
+  display: none;
+}

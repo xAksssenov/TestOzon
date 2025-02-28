@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Component</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" id="progressBlock">
+      <h3 class="container__title">Progress</h3>
+
+      <div class="section">
+        <svg class="section__ring" viewBox="0 0 100 100">
+          <circle
+            class="section__ring--background"
+            cx="50"
+            cy="50"
+            r="40"
+            stroke-width="10"
+          />
+          <circle
+            class="section__ring--progress"
+            cx="50"
+            cy="50"
+            r="40"
+            stroke-width="10"
+            stroke-dasharray="0 251.2"
+          />
+        </svg>
+
+        <section class="section__inputs">
+          <label for="valueInput">
+            <input
+              class="section__inputs--item"
+              type="number"
+              id="valueInput"
+              value="0"
+            />
+            Value
+          </label>
+          <label>
+            <input
+              class="section__inputs--item"
+              type="checkbox"
+              id="animateToggle"
+            />
+            Animate
+          </label>
+          <label>
+            <input
+              class="section__inputs--item"
+              type="checkbox"
+              id="hideToggle"
+            />
+            Hide
+          </label>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
