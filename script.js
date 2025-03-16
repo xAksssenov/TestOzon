@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hideToggle = document.getElementById("hideToggle");
 
   function checkValue(value) {
-    return value >= 0 && value <= 100;
+    return value >= 0 && value <= 100
   }
 
   function updateProgress(value) {
